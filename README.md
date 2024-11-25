@@ -32,5 +32,7 @@ If you want to take a shot of our method, you can follow below step by step:
 
 > Only Uncommend "GeoImage_Rasterization()" in the main function, and run the project to generate "PD10_1024_pixelGeoSample.txt" into the folder: './Data/[Garment]/Canonical/weld/test/'.
 
- 
+> Import the body motion ('.fbx') into blend and export the obj sequence named as 'b' into the folder: './Data/body/[motion]/'.
+
+>  
  
