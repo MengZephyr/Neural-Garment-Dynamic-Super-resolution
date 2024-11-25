@@ -22,7 +22,7 @@ If you want to take a shot of our method, you can follow below step by step:
 
 > Export the flattened garments, named as "PD10_Flatten.obj" and "PD30_Flatten.obj" ( "unweld" and "thin" chosen) into the folder: './Data/[Garment]/Canonical/weld/'.
 
-> Use Data_prepaer/uv_abstract.py to depart the geometry and the uv information, and to generate "PD10_geo.ply", "PD10_uv.ply", "PD30_geo.ply", and "PD30_uv.ply" in the folder: './Data/[Garment]/Canonical/weld/'.
+> Use GDSR/uv_abstract.py to depart the geometry and the uv information, and to generate "PD10_geo.ply", "PD10_uv.ply", "PD30_geo.ply", and "PD30_uv.ply" in the folder: './Data/[Garment]/Canonical/weld/'.
  
 > Compile the C++ project, UV_Sampling_proj, which is dependent on the 3rd library of opencv_4.6.0 and embree-3.5.2.x64.vc14.windows.
 
