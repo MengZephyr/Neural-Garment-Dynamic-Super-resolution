@@ -10,25 +10,25 @@ We provide Google drive links for downloading the training data (five outfits an
 >[Checkpoint](https://drive.google.com/file/d/1lrYa4SK0uH1IdjrvzjBHyD-a-tc60BCe/view?usp=sharing) <br />
 
 ## Data preparation
->> Throw an outfit and a motion sequence into Marvelous Designer.
->> 
->> Choose the material settings. We use Silk_Charmuse in our paper.
->> 
->> Run simulations with the partical settings of PD=10mm (High Resolution) and PD=30mm (Low Resolution), respecitvely, and export the OBJ sequences named with "PD10" and "PD30" ("weld" and "thin" chosen). 
->> 
->> Export the static garments at the canonical pose for the high-resolution and low-resolution respectively, named as "PD10_C.obj" and "PD30_C.obj" ("weld" and "thin" is chosen).
->> 
->> Export the flattened garments, named as "PD10_Flatten.obj" and "PD30_Flatten.obj" ( "unweld" and "thin" chosen).
->> 
->> Use Data_prepaer/uv_abstract.py to depart the geometry and the uv information, and to generate "PD10_geo.ply", "PD10_uv.ply", "PD30_geo.ply", and "PD30_uv.ply".
->> 
->> Compile the C++ project, UV_Sampling_proj, which is dependent on the 3rd library of opencv_4.6.0 and embree-3.5.2.x64.vc14.windows.
->> 
->> Only Uncommend "Sampling_between_Different_PDResolution_Across_UV()" in the main function, and run the project to generate "10_from_30_Sampling.txt" and "30_from_10_Sampling.txt".
->>
->> Only Uncommend "Geo_UV_Map()" in the main function, and run the project to generate "PD10_g_to_u.txt", "PD10_u_to_g.txt", "PD30_g_to_u.txt" and "PD30_u_to_g.txt".
->>
->> Only Uncommend "GeoImage_Rasterization()" in the main function, and run the project to generate "PD10_1024_pixelGeoSample.txt".
->>
->> 
+Throw an outfit and a motion sequence into Marvelous Designer.
+ 
+Choose the material settings. We use Silk_Charmuse in our paper.
+
+Run simulations with the partical settings of PD=10mm (High Resolution) and PD=30mm (Low Resolution), respecitvely, and export the OBJ sequences named with "PD10" and "PD30" ("weld" and "thin" chosen).  
+
+Export the static garments at the canonical pose for the high-resolution and low-resolution respectively, named as "PD10_C.obj" and "PD30_C.obj" ("weld" and "thin" is chosen).
+
+Export the flattened garments, named as "PD10_Flatten.obj" and "PD30_Flatten.obj" ( "unweld" and "thin" chosen).
+
+Use Data_prepaer/uv_abstract.py to depart the geometry and the uv information, and to generate "PD10_geo.ply", "PD10_uv.ply", "PD30_geo.ply", and "PD30_uv.ply".
+ 
+Compile the C++ project, UV_Sampling_proj, which is dependent on the 3rd library of opencv_4.6.0 and embree-3.5.2.x64.vc14.windows.
+
+Only Uncommend "Sampling_between_Different_PDResolution_Across_UV()" in the main function, and run the project to generate "10_from_30_Sampling.txt" and "30_from_10_Sampling.txt".
+
+Only Uncommend "Geo_UV_Map()" in the main function, and run the project to generate "PD10_g_to_u.txt", "PD10_u_to_g.txt", "PD30_g_to_u.txt" and "PD30_u_to_g.txt".
+
+Only Uncommend "GeoImage_Rasterization()" in the main function, and run the project to generate "PD10_1024_pixelGeoSample.txt".
+
+ 
  
