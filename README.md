@@ -11,10 +11,18 @@ We provide Google drive links for downloading the training data (five outfits an
 
 ## Data preparation
 >> Throw an outfit and a motion sequence into Marvelous Designer.
+>> 
 >> Choose the material settings (we use Silk_Charmuse in our paper).
+>> 
 >> Run simulations with the partical settings of PD=10mm (High Resolution) and PD=30mm (Low Resolution), respecitvely, and export the OBJ sequences named with "PD10" and "PD30" (with "weld" and "thin" is chosen).
+>> 
 >> Export the static garments at the canonical pose for the high-resolution and low-resolution respectively, named as "PD10_C.obj" and "PD30_C.obj" (with "weld" and "thin" is chosen).
+>> 
 >> Export the flattened garments, named as "PD10_Flatten.obj" and "PD30_Flatten.obj"(with "unweld" and "thin" is chosen).
+>> 
 >> Use Data_prepaer/uv_abstract.py to depart the geometry and the uv information, and to generate "PD10_geo.ply", "PD10_uv.ply", "PD30_geo.ply", and "PD30_uv.ply".
+>> 
 >> Compile the C++ project, UV_Sampling_proj, which is dependent on the 3rd library of opencv and embree.
->> Uncommond the function, $${\color{gree}Sampling_between_Different_PDResolution_Across_UV()}$$, and run the project to generate "10_from_30_Sampling.txt" and "30_from_10_Sampling.txt".    
+>> 
+>> Uncommond the function "Sampling_between_Different_PDResolution_Across_UV", and run the project to generate "10_from_30_Sampling.txt" and "30_from_10_Sampling.txt".
+ 
