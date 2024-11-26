@@ -10,13 +10,13 @@ We provide Google drive links for downloading the training data (five outfits an
 >[Checkpoint](https://drive.google.com/file/d/1lrYa4SK0uH1IdjrvzjBHyD-a-tc60BCe/view?usp=sharing) <br />
 
 ## Have fun!
-If you want to take a shot of our method, you can follow below step by step:
+If you want to take a shot of our method, you can follow below step by step to setup your own training:
 
 > Throw an outfit and a motion sequence into Marvelous Designer.
  
 > Choose the material settings. We use Silk_Charmuse in our paper.
 
-> Run simulations with the partical settings of PD=10mm (High Resolution) and PD=30mm (Low Resolution), respecitvely, and export the OBJ sequences named with "PD10" and "PD30" ("weld" and "thin" chosen) in the file folder: './Data/[Garment]/[motion]/PD10/' and './Data/[Garment]/[motion]/PD30/'.
+> Run simulations with the partical settings of PD=10mm (High Resolution) and PD=30mm (Low Resolution), respecitvely, and export the OBJ sequences named with "PD10" and "PD30" ("weld" and "thin" chosen) in the file folder: './Data/[Garment]/[Material]/[Motion]/PD10/' and './Data/[Garment]/[motion]/PD30/'.
 
 > Export the static garments at the canonical pose for the high-resolution and low-resolution respectively, named as "PD10_C.obj" and "PD30_C.obj" ("weld" and "thin" is chosen) in the folder: './Data/[Garment]/Canonical/weld/'.
 
@@ -26,13 +26,15 @@ If you want to take a shot of our method, you can follow below step by step:
  
 > Compile the C++ project, UV_Sampling_proj, which is dependent on the 3rd library of opencv_4.6.0 and embree-3.5.2.x64.vc14.windows.
 
-> Only Uncommend "Sampling_between_Different_PDResolution_Across_UV()" in the main function, and run the project to generate "10_from_30_Sampling.txt" and "30_from_10_Sampling.txt" into the folder: './Data/[Garment]/Canonical/weld/test/'.
+> Only Uncommend "Sampling_between_Different_PDResolution_Across_UV()" in the main function of UV_Sampling_proj, and run the project to generate "10_from_30_Sampling.txt" and "30_from_10_Sampling.txt" into the folder: './Data/[Garment]/Canonical/weld/test/'.
 
-> Only Uncommend "Geo_UV_Map()" in the main function, and run the project to generate "PD10_g_to_u.txt", "PD10_u_to_g.txt", "PD30_g_to_u.txt" and "PD30_u_to_g.txt" in the folder: './Data/[Garment]/Canonical/weld/'.
+> Only Uncommend "Geo_UV_Map()" in the main function of UV_Sampling_proj, and run the project to generate "PD10_g_to_u.txt", "PD10_u_to_g.txt", "PD30_g_to_u.txt" and "PD30_u_to_g.txt" in the folder: './Data/[Garment]/Canonical/weld/'.
 
-> Only Uncommend "GeoImage_Rasterization()" in the main function, and run the project to generate "PD10_1024_pixelGeoSample.txt" into the folder: './Data/[Garment]/Canonical/weld/test/'.
+> Only Uncommend "GeoImage_Rasterization()" in the main function of UV_Sampling_proj, and run the project to generate "PD10_1024_pixelGeoSample.txt" into the folder: './Data/[Garment]/Canonical/weld/test/'.
 
 > Import the body motion ('.fbx') into blend and export the obj sequence named as 'b' into the folder: './Data/body/[motion]/'.
 
->  
+> Use GDSR/prepare_trainingData to prepare the input features of each frame, and generate file sequences in the folder: './Data/[Garment]/[Material]/[Motion]/10_30_B/'.
+
+> 
  
