@@ -15,9 +15,9 @@ If you want to take a shot of our method, you can follow below step by step to t
 
 ### Code compile
 
-> Compile the C++ project, UV_Sampling_proj, which is dependent on the 3rd library of opencv_4.6.0 and embree-3.5.2.x64.vc14.windows.
+> Compile the C++ project, [UV_Sampling_proj](https://github.com/MengZephyr/Neural-Garment-Dynamic-Super-resolution/tree/main/UV_Sampling_proj), which is dependent on the 3rd library of opencv_4.6.0 and embree-3.5.2.x64.vc14.windows.
 
-> > The python code in ./GDSR dependent on the 3rd library of pytorch, open3d, sklearn, numpy, opencv, einops, PIL, torchvision.
+> The python code in [./GDSR](https://github.com/MengZephyr/Neural-Garment-Dynamic-Super-resolution/tree/main/GDSR) dependent on the 3rd library of pytorch, open3d, sklearn, numpy, opencv, einops, PIL, torchvision.
 
 ### Data preparation
 
