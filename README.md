@@ -10,7 +10,16 @@ We provide Google drive links for downloading the training data (five outfits an
 >[Checkpoint](https://drive.google.com/file/d/1lrYa4SK0uH1IdjrvzjBHyD-a-tc60BCe/view?usp=sharing) <br />
 
 ## Have fun!
-If you want to take a shot of our method, you can follow below step by step to setup your own training:
+
+If you want to take a shot of our method, you can follow below step by step to train your own model:
+
+### Code compile
+
+> Compile the C++ project, UV_Sampling_proj, which is dependent on the 3rd library of opencv_4.6.0 and embree-3.5.2.x64.vc14.windows.
+
+> > The python code in ./GDSR dependent on the 3rd library of pytorch, open3d, sklearn, numpy, opencv, einops, PIL, torchvision.
+
+### Data preparation
 
 > Throw an outfit and a motion sequence into Marvelous Designer.
  
@@ -23,8 +32,6 @@ If you want to take a shot of our method, you can follow below step by step to s
 > Export the flattened garments, named as "PD10_Flatten.obj" and "PD30_Flatten.obj" ( "unweld" and "thin" chosen) into the folder: './Data/[Garment]/Canonical/weld/'.
 
 > Use GDSR/uv_abstract.py to depart the geometry and the uv information, and to generate "PD10_geo.ply", "PD10_uv.ply", "PD30_geo.ply", and "PD30_uv.ply" in the folder: './Data/[Garment]/Canonical/weld/'.
- 
-> Compile the C++ project, UV_Sampling_proj, which is dependent on the 3rd library of opencv_4.6.0 and embree-3.5.2.x64.vc14.windows.
 
 > Only Uncommend "Sampling_between_Different_PDResolution_Across_UV()" in the main function of UV_Sampling_proj, and run the project to generate "10_from_30_Sampling.txt" and "30_from_10_Sampling.txt" into the folder: './Data/[Garment]/Canonical/weld/test/'.
 
@@ -34,7 +41,18 @@ If you want to take a shot of our method, you can follow below step by step to s
 
 > Import the body motion ('.fbx') into blend and export the obj sequence named as 'b' into the folder: './Data/body/[motion]/'.
 
-> Use GDSR/prepare_trainingData to prepare the input features of each frame, and generate file sequences in the folder: './Data/[Garment]/[Material]/[Motion]/10_30_B/'.
+### GDSR training
 
-> 
+> Use GDSR/prepare_trainingData to prepare the input features of each frame, and generate file sequences in the folder: './Data/[Garment]/[Material]/[Motion]/10_30_B/'. It's important to note that in the cases of multi-layered garments, we need to set index of the coarse garment mesh vertex (layerSplit_vID) from which the mesh layers are splited. 
+
+> Use GDSR/train_physDeform.py to train GDSR model.
+
+### GDSR inference
+
+> Follow the steps in "Data preparation" to handle new data.
+
+> Use GDSR/prepare_runningData to prepare the input features of each frame, and generate file sequences in the folder: './Data/[Garment]/[Material]/[Motion]/10_30_R/'. It's important to note that in the cases of multi-layered garments, we need to set index of the coarse garment mesh vertex (layerSplit_vID) from which the mesh layers are splited.
+
+> Use GDSR/rollout_prediction.py to enhance wrinkle details for the testing data input. It's important to note that in the cases of multi-layered garments, we need to set index of the LR mesh vertex (coarse_layerSplit_ID), LR mesh face (coarse_faceSplit_ID) and HR mesh vertex (target_layerSplit_ID), from which the garment layers are splited.
+
  
